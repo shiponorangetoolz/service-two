@@ -11,6 +11,13 @@ use Symfony\Component\HttpFoundation\Response;
 
 class PaymentController extends Controller
 {
+
+    public function billing(Request $request)
+    {
+        $billing  = DB::table('payments')->whereIn('user_id',$request->query())->get();
+        return response()->json($billing);
+    }
+
     public function payment(Request $request)
     {
         $token = $request->bearerToken();

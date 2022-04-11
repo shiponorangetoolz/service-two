@@ -19,6 +19,7 @@ $router->get('/', function () use ($router) {
 
 $router->get('redis',['uses' => 'RedisController@redis']);
 $router->put('payment',['uses' => 'PaymentController@payment']);
+$router->get('billing',['uses' => 'PaymentController@billing']);
 //$router->put('payment',function(){
 //    return response()->json(['test'=>'tests']);
 //});
